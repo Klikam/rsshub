@@ -22,7 +22,6 @@ export default function NewRssFeed(): JSX.Element {
   });
 
   const onSubmit = (data: newRssFeedValues) => {
-    console.log(data);
     redirect(`feeds/${data.rssName}`);
   };
 
