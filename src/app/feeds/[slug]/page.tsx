@@ -1,5 +1,7 @@
 import { JSX } from "react";
 import Parser from "rss-to-js";
+import PostItem from "./PostItem";
+import { RedditPostSchema } from "@/schema/redditPostType";
 
 export default async function Feed({
   params,
@@ -17,7 +19,14 @@ export default async function Feed({
   return (
     <>
       <h2>The rss name is {slug}</h2>
-      <p>{feed.title}</p>
+
+      <ul>
+        {feed.items &&
+          feed.items.length !== 0 &&
+          RedditPostSchema.array()
+            .parse(feed.items)
+            .map((post) => <PostItem key={post.id} item={post} />)}
+      </ul>
     </>
   );
 }
