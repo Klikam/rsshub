@@ -1,9 +1,9 @@
-import GetRssFeed from "@/components/pages/GetRssFeed";
+import NewRssFeed from "@/components/pages/NewRssFeed";
 
 export default function Home() {
   return (
     <main>
-      <GetRssFeed />
+      <NewRssFeed />
     </main>
   );
 }
